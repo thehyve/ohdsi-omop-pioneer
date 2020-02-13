@@ -1,5 +1,5 @@
 -- v2.7.4
--- http://atlas-demo.ohdsi.org/WebAPI/ddl/results?dialect=postgresql&schema=%3Cresults_schema%3E&vocabSchema=%3Cvocab_schema%3E&tempSchema=%3Ctemp_schema%3E&initConceptHierarchy=true
+-- http://atlas-demo.ohdsi.org/WebAPI/ddl/results?dialect=postgresql&schema=results_schema&vocabSchema=vocab_schema&tempSchema=temp_schema&initConceptHierarchy=true
 -- Note: due to login, it is not possible to generate this directly from the pioneer-atlas WebAPI url
 
 CREATE TABLE IF NOT EXISTS cohort
@@ -2752,8 +2752,5 @@ CREATE INDEX HH_IDX_COHORT_ID_ANALYSIS_ID ON HERACLES_HEEL_RESULTS (cohort_defin
 CREATE INDEX idx_heracles_periods_startdate ON heracles_periods (period_start_date);
 
 CREATE INDEX idx_heracles_periods_end_date ON heracles_periods (period_end_date);
-
-
-CREATE INDEX idx_concept_id_varchar ON vocab.concept (CAST(concept_id AS VARCHAR));
 
 CREATE INDEX idx_pathway_events_combo_id ON pathway_analysis_events (combo_id);
