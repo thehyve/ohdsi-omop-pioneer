@@ -108,7 +108,8 @@ CREATE TABLE person (
 )
 ;
 
-CREATE TABLE cdm5.death (
+-- !
+CREATE TABLE death (
     person_id               INTEGER NOT NULL,
     death_date              DATE    NOT NULL,
     death_datetime          TIMESTAMP WITHOUT TIME ZONE,
