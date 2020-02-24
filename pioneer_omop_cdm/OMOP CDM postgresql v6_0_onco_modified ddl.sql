@@ -25,9 +25,11 @@
  #     # #     # #     # #          #     # #     # #     #     #  #  #     # ###  #   #
  ####### #     # ####### #           #####  ######  #     #      ##    #####  ###   ###
 
-postgresql script to create OMOP common data model version 6.0
+Modified for PIONEER project:
+ - Added oncology extension (episode, episode_event, measurement modifier field)
+ - Added compatibility with OMOP CDM v5 (death table, date fields) 
 
-last revised: 27-Aug-2018
+postgresql script to create OMOP common data model version 6.0
 
 Authors:  Patrick Ryan, Christian Reich, Clair Blacketer
 
