@@ -597,9 +597,9 @@ CREATE TABLE drug_era (
     drug_era_id             BIGINT    NOT NULL,
     person_id               BIGINT    NOT NULL,
     drug_concept_id         INTEGER   NOT NULL,
-    drug_era_start_date     DATE      NOT NULL, -- !
+    drug_era_start_date     DATE      NULL, -- !
     drug_era_start_datetime TIMESTAMP NOT NULL,
-    drug_era_end_date       DATE      NOT NULL, -- !
+    drug_era_end_date       DATE      NULL, -- !
     drug_era_end_datetime   TIMESTAMP NOT NULL,
     drug_exposure_count     INTEGER   NULL,
     gap_days                INTEGER   NULL
@@ -614,7 +614,9 @@ CREATE TABLE dose_era (
     drug_concept_id         INTEGER   NOT NULL,
     unit_concept_id         INTEGER   NOT NULL,
     dose_value              NUMERIC   NOT NULL,
+    dose_era_start_date     DATE      NULL, -- !
     dose_era_start_datetime TIMESTAMP NOT NULL,
+    dose_era_end_date       DATE      NULL, -- !
     dose_era_end_datetime   TIMESTAMP NOT NULL
 )
 ;
@@ -625,7 +627,9 @@ CREATE TABLE condition_era (
     condition_era_id             BIGINT    NOT NULL,
     person_id                    BIGINT    NOT NULL,
     condition_concept_id         INTEGER   NOT NULL,
+    condition_era_start_date     DATE      NULL, -- !
     condition_era_start_datetime TIMESTAMP NOT NULL,
+    condition_era_end_date       DATE      NULL, -- !
     condition_era_end_datetime   TIMESTAMP NOT NULL,
     condition_occurrence_count   INTEGER   NULL
 )
