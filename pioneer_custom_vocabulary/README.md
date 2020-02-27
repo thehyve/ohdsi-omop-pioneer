@@ -22,3 +22,7 @@ Following conversions have been done:
 | Source Domain | Target Domain |    |
 |:--------------|:--------------|:---|
 |               |               |    |
+
+# Searching the mappings
+ - interface to search through the custom vocabulary.
+ - do not show invalid concepts
