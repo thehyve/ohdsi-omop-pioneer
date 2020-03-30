@@ -22,5 +22,6 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA <dataset_schema_name> GRANT SELECT ON TABLES 
 GRANT SELECT ON ALL TABLES IN SCHEMA <dataset_schema_name>_results TO <dataset_schema_name>_results_group;
 ALTER DEFAULT PRIVILEGES IN SCHEMA <dataset_schema_name>_results GRANT SELECT ON TABLES TO <dataset_schema_name>_results_group;
 
--- Make the role for access to all datasets inherit the newly added one
-GRANT <dataset_schema_name>_group TO all_datasets;
+-- Add the dataset access role to all WP groups that should get access
+-- E.g.
+-- GRANT <dataset_schema_name>_group TO WP5;
