@@ -1,4 +1,11 @@
--- Create WP groups and grant them access to the repective dataset groups.
+-- Create a new user and assign it a WP
+CREATE USER username WITH PASSWORD '<password>';
+-- Assign the new user to a WP access group
+GRANT <wp> TO username;
+
+
+
+-- Create WP groups and grant them access to the respective dataset groups.
 
 CREATE ROLE wp1 WITH NOLOGIN;
 GRANT synpuf_1k_group TO wp1;
@@ -16,9 +23,3 @@ CREATE ROLE wp5 WITH NOLOGIN;
 GRANT synpuf_1k_group TO wp5;
 GRANT erspc_synth_group TO wp5;
 GRANT erspc_group TO wp5;
-
-
--- Create a new user and assign it a WP
-CREATE USER username WITH PASSWORD '<password>';
--- Assign the new user to a WP access group
-GRANT <wp> TO username;
