@@ -26,7 +26,7 @@ concept_id,concept_name,domain_id,vocabulary_id,concept_class_id,standard_concep
 2000000025,Nitrofuran,Measurement,Pioneer,Undefined,,25,1970-01-01,2099-12-31,
 2000000026,Pain after biopsy,Condition,Pioneer,Undefined,,26,1970-01-01,2099-12-31,
 2000000027,Size of prostate cancer in biopt,Measurement,Pioneer,Undefined,,27,1970-01-01,2099-12-31,
-2000000028,PIRADS score,Measurement,Pioneer,Undefined,,28,1970-01-01,2099-12-31,
+2000000028,PI-RADS score,Measurement,Pioneer,Undefined,,28,1970-01-01,2099-12-31,
 2000000029,3: cancer is equivocal,Meas Value,Pioneer,Undefined,,29,1970-01-01,2099-12-31,
 2000000030,4: cancer is likely,Meas Value,Pioneer,Undefined,,30,1970-01-01,2099-12-31,
 2000000031,5: cancer is very likely,Meas Value,Pioneer,Undefined,,31,1970-01-01,2099-12-31,
