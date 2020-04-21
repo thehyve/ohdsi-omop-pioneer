@@ -8,6 +8,8 @@ In addition, the fields ``modifier_of_event`` and ``modifier_of_field_concept_id
 
 ## OMOP Vocabulary version
 OMOP vocabulary v5 is used for the semantic mappings. The vocabularies are downloaded from [Athena](http://athena.ohdsi.org/).
+Source concepts are mapped to standard concepts in these vocobularies. In rare cases it is possible that a source term doesn't match a standard concept,
+but can be mapped to a non-standard concept. In these cases the exception is made to map a source term to a non-standard concept.  
 
 ## Custom vocabulary
 Whenever appropriate concepts are missing in the OMOP Vocabulary, custom concepts are used.
