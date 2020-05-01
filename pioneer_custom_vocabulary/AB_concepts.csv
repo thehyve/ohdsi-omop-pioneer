@@ -14,3 +14,6 @@ concept_id,concept_name,domain_id,vocabulary_id,concept_class_id,standard_concep
  ,New bone lesion number, , , , , , , , ,
  ,Bone lesion number per site, , , , , , , , ,
  ,Tracer uptake Related to disease, , , , , , , ,
+ ,Non-target, , , , , , , ,
+ ,Target, , , , , , , ,
+ ,Tumor identification, , , , , , , ,
