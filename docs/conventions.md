@@ -6,7 +6,6 @@ plus [oncology extensions](https://github.com/OHDSI/OncologyWG/wiki).
 The *Episode* and *Episode Event* tables are added to the OMOP CDM. 
 In addition, the fields ``modifier_of_event`` and ``modifier_of_field_concept_id`` are added to the *Measurement* table.
 
-
 ## Semantic mapping
 ### Version
 OMOP vocabulary v5 is used for the semantic mappings. The vocabularies are downloaded from [Athena](http://athena.ohdsi.org/).
@@ -22,12 +21,15 @@ To summarise, we have the following three options for semantic mapping, with dec
 ### Custom vocabulary
 Whenever appropriate concepts are missing in the OMOP Vocabulary, custom concepts are used.
 These custom concepts are aligned within PIONEER. 
-The PIONEER custom vocabulary can be found [here](https://github.com/thehyve/ohdsi-omop-pioneer/tree/master/pioneer_custom_vocabulary).  
+The PIONEER custom vocabulary can be found [here](https://github.com/thehyve/ohdsi-omop-pioneer/tree/master/pioneer_custom_vocabulary).
+
+If a custom concept is added to the PIONEER custom vocabulary, and this custom concept becomes obsolete in a later stage of the ETL development process, 
+the custom concept is not removed from the PIONEER custom vocabulary but is assigned a "D" (Deleted) in the ``standard_concept`` column of the PIONEER custom vocabulary file.  
 
 ## Syntactic mapping
 
 ### Date
-- When only year is stored in the data (and month and day are missing), The first of July (07-01) is used as a proxy. This day will be, on average, the closest to the actual date.
+- When only year is stored in the data (and month and day are missing), the first of July (07-01) is used as a proxy. This day will be, on average, the closest to the actual date.
 - When year is not stored in the dataset, the following steps and conventions are followed:
 	1. Decide whether the record will be kept. A missing date could point to a quality issue in the source data. If decided not the keep the record, do not map the date. 
 	2. If decided to map the record:
