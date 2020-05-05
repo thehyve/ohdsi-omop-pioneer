@@ -1,0 +1,125 @@
+{
+  "name": "PIONEER Technical Test - Demographics",
+  "cohorts": [
+    {
+      "id": 15,
+      "name": "Technical Test - Neoplasm of prostate",
+      "description": null,
+      "createdDate": "2020-05-05 08:56",
+      "modifiedDate": null,
+      "expression": {
+        "cdmVersionRange": ">=5.0.0",
+        "PrimaryCriteria": {
+          "CriteriaList": [
+            {
+              "ConditionOccurrence": {
+                "CodesetId": 0,
+                "ConditionTypeExclude": false
+              }
+            }
+          ],
+          "ObservationWindow": {
+            "PriorDays": 0,
+            "PostDays": 0
+          },
+          "PrimaryCriteriaLimit": {
+            "Type": "First"
+          }
+        },
+        "ConceptSets": [
+          {
+            "id": 0,
+            "name": "Neoplasm of prostate",
+            "expression": {
+              "items": [
+                {
+                  "concept": {
+                    "CONCEPT_ID": 4129902,
+                    "CONCEPT_NAME": "Neoplasm of prostate",
+                    "STANDARD_CONCEPT": "S",
+                    "STANDARD_CONCEPT_CAPTION": "Standard",
+                    "INVALID_REASON": "V",
+                    "INVALID_REASON_CAPTION": "Valid",
+                    "CONCEPT_CODE": "126906006",
+                    "DOMAIN_ID": "Condition",
+                    "VOCABULARY_ID": "SNOMED",
+                    "CONCEPT_CLASS_ID": "Clinical Finding"
+                  },
+                  "isExcluded": false,
+                  "includeDescendants": true,
+                  "includeMapped": false
+                }
+              ]
+            }
+          }
+        ],
+        "QualifiedLimit": {
+          "Type": "First"
+        },
+        "ExpressionLimit": {
+          "Type": "First"
+        },
+        "InclusionRules": [],
+        "CensoringCriteria": [],
+        "CollapseSettings": {
+          "CollapseType": "ERA",
+          "EraPad": 0
+        },
+        "CensorWindow": {}
+      }
+    }
+  ],
+  "featureAnalyses": [
+    {
+      "id": 71,
+      "type": "PRESET",
+      "name": "Demographics Age Group",
+      "domain": "DEMOGRAPHICS",
+      "statType": "PREVALENCE",
+      "descr": "Age of the subject on the index date (in 5 year age groups)",
+      "design": "DemographicsAgeGroup",
+      "description": "Age of the subject on the index date (in 5 year age groups)"
+    },
+    {
+      "id": 74,
+      "type": "PRESET",
+      "name": "Demographics Gender",
+      "domain": "DEMOGRAPHICS",
+      "statType": "PREVALENCE",
+      "descr": "Gender of the subject.",
+      "design": "DemographicsGender",
+      "description": "Gender of the subject."
+    },
+    {
+      "id": 79,
+      "type": "PRESET",
+      "name": "Demographics Time In Cohort",
+      "domain": "DEMOGRAPHICS",
+      "statType": "DISTRIBUTION",
+      "descr": "Number of days of observation time during cohort period.",
+      "design": "DemographicsTimeInCohort",
+      "description": "Number of days of observation time during cohort period."
+    },
+    {
+      "id": 80,
+      "type": "PRESET",
+      "name": "Demographics Index Year",
+      "domain": "DEMOGRAPHICS",
+      "statType": "PREVALENCE",
+      "descr": "Year of the index date.",
+      "design": "DemographicsIndexYear",
+      "description": "Year of the index date."
+    }
+  ],
+  "parameters": [],
+  "stratas": [],
+  "strataOnly": false,
+  "strataConceptSets": [],
+  "createdAt": "2020-05-05 09:00:29",
+  "updatedAt": "2020-05-05 09:00:56",
+  "skeletonType": "CohortCharacterizationStudy",
+  "skeletonVersion": "v0.0.1",
+  "packageName": null,
+  "organizationName": "OHDSI",
+  "stratifiedBy": null
+}
