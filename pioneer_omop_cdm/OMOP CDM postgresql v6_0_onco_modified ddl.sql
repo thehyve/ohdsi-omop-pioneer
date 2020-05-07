@@ -26,8 +26,8 @@
  ####### #     # ####### #           #####  ######  #     #      ##    #####  ###   ###
 
 Modified for PIONEER project:
- - Added oncology extension (episode, episode_event, measurement modifier field)
- - Added compatibility with OMOP CDM v5 (death table, date fields) 
+ - Added oncology extension; episode, episode_event and measurement modifier field.
+ - Added compatibility with OMOP CDM v5; death table and era table (x3) date fields.
 
 postgresql script to create OMOP common data model version 6.0
 
