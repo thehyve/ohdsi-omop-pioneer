@@ -124,3 +124,7 @@ concept_id,concept_name,domain_id,vocabulary_id,concept_class_id,standard_concep
 2000000123,Follow-up Visit 36 - MRI,Visit,PIONEER,Undefined,,123,1970-01-01,2099-12-31,
 2000000124,Follow-up Visit 37 - MRI,Visit,PIONEER,Undefined,,124,1970-01-01,2099-12-31,
 2000000125,Follow-up Visit 38 - MRI,Visit,PIONEER,Undefined,,125,1970-01-01,2099-12-31,
+2000000126,Screening visit,Visit,PIONEER,Undefined,,126,1970-01-01,2099-12-31,
+2000000127,Follow-up visit,Visit,PIONEER,Undefined,,127,1970-01-01,2099-12-31,
+2000000128,Scheduled visit,Visit,PIONEER,Undefined,,128,1970-01-01,2099-12-31,
+2000000129,Unscheduled visit,Visit,PIONEER,Undefined,,129,1970-01-01,2099-12-31,
