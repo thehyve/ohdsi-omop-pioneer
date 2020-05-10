@@ -1,14 +1,16 @@
 # General conventions
 
-## OMOP CDM version
-PIONEER datasets are converted to [OMOP CDM V6.0.0](https://github.com/OHDSI/CommonDataModel/wiki) 
-plus [oncology extensions](https://github.com/OHDSI/OncologyWG/wiki).
+## OMOP CDM
+### Version
+PIONEER datasets are converted to [OMOP CDM V6.0.0](https://github.com/OHDSI/CommonDataModel/wiki) plus [oncology extensions](https://github.com/OHDSI/OncologyWG/wiki).
 The *Episode* and *Episode Event* tables are added to the OMOP CDM. 
 In addition, the fields ``modifier_of_event`` and ``modifier_of_field_concept_id`` are added to the *Measurement* table.
 
-## Semantic mapping
+## OMOP Vocabularies
 ### Version
-OMOP vocabulary v5 is used for the semantic mappings. The vocabularies are downloaded from [Athena](http://athena.ohdsi.org/).
+The latest OMOP vocabulary can be downloaded from [Athena](http://athena.ohdsi.org/).
+The version loaded on the central PIONEER server can be found by going to the [Atlas Configuration](https://pioneer-atlas.thehyve.net/#/configure) page 
+(at the time of writing this is `v5.0 01-AUG-19`). 
 
 ### Mapping
 Terms found in the source data are mapped to concepts in the OMOP standard vocabularies to achieve semantic interoperability. In most cases a mapping to a standard concept with the same meaning as the source term can be made. If this is not possible, we map the source term to a non-standard concept. If there is also no non-standard concept matching the source term, then we create a custom 'PIONEER' concept.
@@ -16,7 +18,7 @@ Terms found in the source data are mapped to concepts in the OMOP standard vocab
 To summarise, we have the following three options for semantic mapping, with decreasing priority:
 1. Mapping to a standard concept
 2. Mapping to a non-standard concept
-3. Mapping to a custom PIONEER concept 
+3. Mapping to a custom PIONEER concept
 
 ### Custom vocabulary
 Whenever appropriate concepts are missing in the OMOP Vocabulary, custom concepts are used.
@@ -26,7 +28,13 @@ The PIONEER custom vocabulary can be found [here](https://github.com/thehyve/ohd
 If a custom concept is added to the PIONEER custom vocabulary, and this custom concept becomes obsolete in a later stage of the ETL development process, 
 the custom concept is not removed from the PIONEER custom vocabulary but is assigned a "D" (Deleted) in the ``standard_concept`` column of the PIONEER custom vocabulary file.  
 
+### Other conventions
+* [Concept id 4163261](https://athena.ohdsi.org/search-terms/terms/4163261) ('Malignant tumor of prostate') is used to record a diagnosis of prostate cancer.
+
+
+
 ## Syntactic mapping
+In general we try to 
 
 ### Date
 - When only year is stored in the data (and month and day are missing), the first of July (07-01) is used as a proxy. This day will be, on average, the closest to the actual date.
@@ -39,7 +47,9 @@ the custom concept is not removed from the PIONEER custom vocabulary but is assi
 	   Exception: When ``observation_period.observation_period_end_date can`` not be derived, take last date of ETL run.
 
 ### Condition Occurrence
-If the protocol states that each person in the dataset has prostate cancer, and if this doesn't immediately become clear from dataset ifself, map for each person the condition "Malignant tumor of prostate" (concept_id: 4163261) to the Condition Occurrence table.  
+In some cases the primary diagnosis is not captured in the data itself, but has to derived from the protocol. 
+For instance in ERSPC, the diagnosis of prostate cancer is not recorded separately (only a year of PCa diagnosis is given).
+In that case a condition occurrence record "Malignant tumor of prostate" ([4163261](https://athena.ohdsi.org/search-terms/terms/4163261)) is stored.  
 
 ### Care site & Location
 Due to privacy reasons, the exact care site and location values are not mapped to the corresponding OMOP tables. 
