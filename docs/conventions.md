@@ -23,7 +23,7 @@ To summarise, we have the following three options for semantic mapping, with dec
 ### Custom vocabulary
 Whenever appropriate concepts are missing in the OMOP Vocabulary, custom concepts are used.
 These custom concepts are aligned within PIONEER. 
-The PIONEER custom vocabulary can be found [here](https://github.com/thehyve/ohdsi-omop-pioneer/tree/master/pioneer_custom_vocabulary).
+The PIONEER custom vocabulary can be found [here](https://github.com/thehyve/ohdsi-omop-pioneer/blob/master/pioneer_custom_vocabulary/pioneer_concepts.csv).
 
 If a custom concept is added to the PIONEER custom vocabulary, and this custom concept becomes obsolete in a later stage of the ETL development process, 
 the custom concept is not removed from the PIONEER custom vocabulary but is assigned a "D" (Deleted) in the ``standard_concept`` column of the PIONEER custom vocabulary file.  
@@ -31,10 +31,7 @@ the custom concept is not removed from the PIONEER custom vocabulary but is assi
 ### Other conventions
 * [Concept id 4163261](https://athena.ohdsi.org/search-terms/terms/4163261) ('Malignant tumor of prostate') is used to record a diagnosis of prostate cancer.
 
-
-
 ## Syntactic mapping
-In general we try to 
 
 ### Date
 - When only year is stored in the data (and month and day are missing), the first of July (07-01) is used as a proxy. This day will be, on average, the closest to the actual date.
