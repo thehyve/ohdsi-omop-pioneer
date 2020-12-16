@@ -182,3 +182,4 @@ concept_id,concept_name,domain_id,vocabulary_id,concept_class_id,standard_concep
 2000000181,Optical Clot detection,Measurement,PIONEER,Undefined,,181,1970-01-01,2099-12-31,
 2000000182,Volume Conductivity Scatter,Measurement,PIONEER,Undefined,,182,1970-01-01,2099-12-31,
 2000000183,Electronic Impedance,Measurement,PIONEER,Undefined,,183,1970-01-01,2099-12-31,
+2000000184,Is one of first 500 patients,Observation,PIONEER,Undefined,,184,1970-01-01,2099-12-31,
