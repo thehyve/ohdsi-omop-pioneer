@@ -194,3 +194,5 @@ concept_id,concept_name,domain_id,vocabulary_id,concept_class_id,standard_concep
 2000000193,Death possibly due to prostate cancer,Condition,PIONEER,Study Variable,S,193,1970-01-01,2099-12-31,
 2000000194,Death probably due to prostate cancer,Condition,PIONEER,Study Variable,S,194,1970-01-01,2099-12-31,
 2000000195,Death definitely due to prostate cancer,Condition,PIONEER,Study Variable,S,195,1970-01-01,2099-12-31,
+2000000196,Routine recall,Observation,PIONEER,Study Variable,S,196,1970-01-01,2099-12-31,
+2000000197,Consent withdrawn,Observation,PIONEER,Study Variable,S,197,1970-01-01,2099-12-31,
