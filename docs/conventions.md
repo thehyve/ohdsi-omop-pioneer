@@ -69,7 +69,7 @@ Contributory causes of death can be stored in the CONDITION table.
 
 ### Type concept
 Every event table (e.g. condition_occurrence, observation) has a `_type_concept` field, which stores the record provenance.
-The main purpose to distinguish reliability of the record. A few types with increasing reliability:
+The main purpose is to determine the reliability of the record. A few types with increasing reliability:
 - Self-reported
 - healthcare professional filled
 - Registry / Study / EHR
