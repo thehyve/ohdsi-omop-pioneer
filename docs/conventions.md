@@ -54,3 +54,35 @@ Due to privacy reasons, the exact care site and location values are not mapped t
 ### CDM Source
 The name and location of the dataset are not captured in the `cdm_source` table.
 A record is created in this table, with the ETL date, source extraction date, ETL reference, vocab version and OMOP CDM version.
+
+### Death date
+The death date is stored twice.
+This redundancy is required for compatibility with both OMOP CDM v5 and v6.
+To capture a death, we have to:
+
+1. Create a record in the death table with at least the `person_id` and `death_date`. 
+   This may also include the primary cause of death.
+2. Update the person record and set the `death_datetime`. 
+   If no time granularity available, use _00:00:00_ as the time component.
+
+Contributory causes of death can be stored in the CONDITION table.
+
+### Type concept
+Every event table (e.g. condition_occurrence, observation) has a `_type_concept` field, which stores the record provenance.
+The main purpose to distinguish reliability of the record. A few types with increasing reliability:
+- Self-reported
+- healthcare professional filled
+- Registry / Study / EHR
+
+A list of valid type concepts can be found [here](https://athena.ohdsi.org/search-terms/terms?vocabulary=Type+Concept&standardConcept=Standard&page=1&pageSize=15&query=).
+For example, data from the ERSPC and PRIAS studies have type [32879 - Registry](https://athena.ohdsi.org/search-terms/terms/32879).
+
+### Study Visits
+We have defined multiple custom concepts to capture the full granularity of study visits.
+For example:
+
+ - Screening visit #1-5 (2000000001-2000000005)
+ - Baseline visit (2000000048)
+ - Follow-up visit #1-38 (2000000049-2000000086)
+
+Please capture the visit information as detailed as possible with the concepts given in [the PIONEER custom concepts](https://github.com/thehyve/ohdsi-omop-pioneer/blob/master/pioneer_custom_vocabulary/pioneer_concepts.csv).
