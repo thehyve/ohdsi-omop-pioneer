@@ -92,7 +92,7 @@ As explained in the [Oncology extension wiki](https://github.com/OHDSI/OncologyW
 the `episode` and `episode_event` tables can be used to link events to a disease stage or treatment.
 In a more broad sense, these tables allow you to group events together when clinically relevant.
 
-E.g. for PRIAS, these episodes tables are used to group related measurement and observation events
+E.g. for PRIAS, these episode tables are used to group related measurement and observation events
 if they originate from the same lesion or core biopsy.
 
 ### Measurement Modifiers
@@ -111,6 +111,6 @@ If the source data contains information on negatives
 (e.g. a specific condition a patient was not diagnosed with, or a procedure not performed),
 it should in principle not be captured in the OMOP CDM.
 Only if a negative is needed to support a particular use case,
-should it be stored as an observation with `concept_id`
+should it be stored as an observation with `concept_id` =
 [No evidence of](https://athena.ohdsi.org/search-terms/terms/4211787),
 whereas the mapped value (e.g. a condition) is stored in `value_as_concept_id`.
