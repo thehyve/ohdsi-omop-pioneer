@@ -101,9 +101,9 @@ nor are the existing table fields suitable,
 it should be captured as a measurement modifier.
 
 This could for example be used to store a severity indicator for a
-reported condition, e.g. `measurement_concept_id=4087703` (Severe),
-`modifier_of_event_id=1` (PK value of condition_occurrence_id),
-`modifier_of_field_concept_id=1147127` (indicates it refers to field condition_occurrence.condition_occurrence_id).
+reported condition, e.g. `measurement_concept_id = 4087703` (Severe),
+`modifier_of_event_id = 1` (PK value of condition_occurrence_id),
+`modifier_of_field_concept_id = 1147127` (indicates it refers to field condition_occurrence.condition_occurrence_id).
 For more information on measurement modifiers see [here](https://github.com/OHDSI/OncologyWG/wiki/MEASUREMENT).
 
 ### Negatives
