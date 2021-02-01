@@ -93,3 +93,32 @@ Please capture the visit information as detailed as possible with the concepts g
 The following conventions are used for the mapping to the Person table.
 - Birth date: Only the Year of Birth is required. Month of Birth may be given and can be mapped. Day of Birth should not be mapped, even if it is available. 
 - Race or Ethnicity are generally not recorded and concepts are mapped to 0.
+
+### Episodes
+As explained in the [Oncology extension wiki](https://github.com/OHDSI/OncologyWG/wiki/Cancer-Models-Representation#representation-of-disease-and-treatment-episodes),
+the `episode` and `episode_event` tables can be used to link events to a disease stage or treatment.
+In a more broad sense, these tables allow you to group events together when clinically relevant.
+
+E.g. for PRIAS, these episode tables are used to group related measurement and observation events
+if they originate from the same lesion or core biopsy.
+
+### Measurement Modifiers
+When a particular piece of information about an event cannot be captured independently,
+nor are the existing table fields suitable,
+it should be captured as a measurement modifier.
+
+This could for example be used to store a severity indicator for a
+reported condition, e.g. `measurement_concept_id = 4087703` (Severe),
+`modifier_of_event_id = 1` (PK value of condition_occurrence_id),
+`modifier_of_field_concept_id = 1147127` (indicates it refers to field condition_occurrence.condition_occurrence_id).
+For more information on measurement modifiers see [here](https://github.com/OHDSI/OncologyWG/wiki/MEASUREMENT).
+
+### Negatives
+If the source data contains information on negatives
+(e.g. a specific condition a patient was not diagnosed with, or a procedure not performed),
+it should in principle not be captured in the OMOP CDM.
+Only if a negative is needed to support a particular use case,
+should it be stored as an observation with `concept_id` =
+[No evidence of](https://athena.ohdsi.org/search-terms/terms/4211787),
+whereas the mapped value (e.g. a condition) is stored in `value_as_concept_id`.
+
