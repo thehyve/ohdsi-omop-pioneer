@@ -36,17 +36,19 @@ the custom concept is not removed from the PIONEER custom vocabulary but is assi
 ### Date
 - When only year is stored in the data (and month and day are missing), the first of July (07-01) is used as a proxy. This day will be, on average, the closest to the actual date.
 - When year is not stored in the dataset, the following steps and conventions are followed:
-	1. Decide whether the record will be kept. A missing date could point to a quality issue in the source data. If decided not the keep the record, do not map the date. 
-	2. If decided to map the record:
+	1. In general, if the date is entirely missing, skip the record. 
+	2. If decided to map the record (for example the record is essential to preserve):
        1. Try to derive year from the context, for example take the data of a related procedure when mapping a conditioning regimen.
        2. If year can not be derived, use ``1970-01-01`` for both ``start_date`` and ``end_date``.
+       3. In case of medical history: capture as 'History of' and use date of capturing this medical history.
 	   
 	   Exception: When ``observation_period.observation_period_end_date can`` not be derived, take last date of ETL run.
 
 ### Condition Occurrence
 In some cases the primary diagnosis is not captured in the data itself, but has to derived from the protocol. 
 For instance in ERSPC, the diagnosis of prostate cancer is not recorded separately (only a year of PCa diagnosis is given).
-In that case a condition occurrence record "Malignant tumor of prostate" ([4163261](https://athena.ohdsi.org/search-terms/terms/4163261)) is stored.  
+In that case a condition occurrence record "Malignant tumor of prostate" ([4163261](https://athena.ohdsi.org/search-terms/terms/4163261)) is stored.
+If the status is equal to BCR, the concept "Non-metastatic prostate cancer" ([37208188](https://athena.ohdsi.org/search-terms/terms/37208188)) is stored.
 
 ### Care site & Location
 Due to privacy reasons, the exact care site and location values are not mapped to the corresponding OMOP tables. 
@@ -87,6 +89,11 @@ For example:
 
 Please capture the visit information as detailed as possible with the concepts given in [the PIONEER custom concepts](https://github.com/thehyve/ohdsi-omop-pioneer/blob/master/pioneer_custom_vocabulary/pioneer_concepts.csv).
 
+### Person
+The following conventions are used for the mapping to the Person table.
+- Birth date: Only the Year of Birth is required. Month of Birth may be given and can be mapped. Day of Birth should not be mapped, even if it is available. 
+- Race or Ethnicity are generally not recorded and concepts are mapped to 0.
+
 ### Episodes
 As explained in the [Oncology extension wiki](https://github.com/OHDSI/OncologyWG/wiki/Cancer-Models-Representation#representation-of-disease-and-treatment-episodes),
 the `episode` and `episode_event` tables can be used to link events to a disease stage or treatment.
@@ -114,3 +121,4 @@ Only if a negative is needed to support a particular use case,
 should it be stored as an observation with `concept_id` =
 [No evidence of](https://athena.ohdsi.org/search-terms/terms/4211787),
 whereas the mapped value (e.g. a condition) is stored in `value_as_concept_id`.
+
