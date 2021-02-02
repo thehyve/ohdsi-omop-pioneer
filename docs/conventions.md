@@ -34,6 +34,7 @@ the custom concept is not removed from the PIONEER custom vocabulary but is assi
 ## Syntactic mapping
 
 ### Date
+- Populate both the `_date` (required in v5) and the `_datetime` (required in v6) fields. If there is not time component, set the time to `00:00:00`.
 - When only year is stored in the data (and month and day are missing), the first of July (07-01) is used as a proxy. This day will be, on average, the closest to the actual date.
 - When year is not stored in the dataset, the following steps and conventions are followed:
 	1. In general, if the date is entirely missing, skip the record. 
