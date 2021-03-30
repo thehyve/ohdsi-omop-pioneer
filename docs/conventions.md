@@ -16,7 +16,7 @@ The version loaded on the central PIONEER server can be found by going to the [A
 Terms found in the source data are mapped to concepts in the OMOP standard vocabularies to achieve semantic interoperability. In most cases a mapping to a standard concept with the same meaning as the source term can be made. If this is not possible, we map the source term to a non-standard concept. If there is also no non-standard concept matching the source term, then we create a custom 'PIONEER' concept.
 
 To summarise, we have the following three options for semantic mapping, with decreasing priority:
-1. Mapping to a standard concept
+1. Mapping to a standard concept. If multiple standard concepts match, use the concept from the SNOMED vocabulary where possible.
 2. Mapping to a non-standard concept
 3. Mapping to a custom PIONEER concept
 
