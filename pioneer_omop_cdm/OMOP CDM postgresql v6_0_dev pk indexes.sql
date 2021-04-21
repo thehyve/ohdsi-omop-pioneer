@@ -65,6 +65,11 @@ Standardized clinical data
 
 /**PRIMARY KEY NONCLUSTERED constraints**/
 
+
+-- Set search path to the correct schema if running this script independently
+-- SET search_path TO <dataset_schema>;
+
+
 ALTER TABLE person ADD CONSTRAINT xpk_person PRIMARY KEY ( person_id ) ;
 
 ALTER TABLE death ADD CONSTRAINT xpk_death PRIMARY KEY ( person_id ) ;

@@ -2,6 +2,11 @@
 -- http://atlas-demo.ohdsi.org/WebAPI/ddl/results?dialect=postgresql&schema=results_schema&vocabSchema=vocab_schema&tempSchema=temp_schema&initConceptHierarchy=true
 -- Note: due to login, it is not possible to generate this directly from the pioneer-atlas WebAPI url
 
+
+-- Set search path to the correct schema if running this script independently
+-- SET search_path TO <dataset_results_schema>;
+
+
 CREATE TABLE IF NOT EXISTS cohort
 (COHORT_DEFINITION_ID int NOT NULL,
  SUBJECT_ID bigint NOT NULL,
