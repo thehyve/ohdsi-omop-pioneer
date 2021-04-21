@@ -1,3 +1,6 @@
+-- Set search path to the correct schema if running this script independently
+-- SET search_path TO <dataset_schema>;
+
 CREATE OR REPLACE VIEW concept AS (SELECT * FROM vocab.concept);
 CREATE OR REPLACE VIEW concept_relationship AS (SELECT * FROM vocab.concept_relationship);
 CREATE OR REPLACE VIEW concept_ancestor AS (SELECT * FROM vocab.concept_ancestor);

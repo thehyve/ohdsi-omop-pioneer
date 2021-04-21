@@ -2,6 +2,9 @@
 /***** Create hierarchy lookup table for the treemap hierarchies *****/
 /*********************************************************************/
 
+SET search_path TO vocab;
+
+
 CREATE TABLE IF NOT EXISTS concept_hierarchy
 (concept_id             INT,
  concept_name           VARCHAR(400),

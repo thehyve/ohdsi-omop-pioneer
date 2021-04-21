@@ -43,6 +43,10 @@ Standardized meta-data
 ***************************/
 
 
+-- Set search path to the correct schema if running this script independently
+-- SET search_path TO <dataset_schema>;
+
+
 --HINT DISTRIBUTE ON RANDOM
 CREATE TABLE cdm_source (
     cdm_source_name                VARCHAR(255) NOT NULL,

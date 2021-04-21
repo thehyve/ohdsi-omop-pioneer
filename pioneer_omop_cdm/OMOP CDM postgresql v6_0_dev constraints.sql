@@ -66,6 +66,11 @@ Standardized clinical data
 
 ************************/
 
+
+-- Set search path to the correct schema if running this script independently
+-- SET search_path TO <dataset_schema>;
+
+
 ALTER TABLE person ADD CONSTRAINT fpk_person_gender_concept FOREIGN KEY (gender_concept_id)  REFERENCES vocab.concept (concept_id);
 
 ALTER TABLE person ADD CONSTRAINT fpk_person_race_concept FOREIGN KEY (race_concept_id)  REFERENCES vocab.concept (concept_id);
