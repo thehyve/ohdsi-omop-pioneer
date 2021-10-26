@@ -12,6 +12,14 @@ The latest OMOP vocabulary can be downloaded from [Athena](http://athena.ohdsi.o
 The version loaded on the central PIONEER server can be found by going to the [Atlas Configuration](https://pioneer-atlas.thehyve.net/#/configure) page 
 (at the time of writing this is `v5.0 01-AUG-19`). 
 
+### Vocabularies
+The following OMOP vocabularies are used in the PIONEER mappings:
+- OMOP generated (Gender, Race, Type Concepts)
+- SNOMED
+- LOINC
+- NAACCR (note: NAACCR is not included in the Athena download by default, and should be selected manually)
+- UCUM
+
 ### Mapping
 Terms found in the source data are mapped to concepts in the OMOP standard vocabularies to achieve semantic interoperability. In most cases a mapping to a standard concept with the same meaning as the source term can be made. If this is not possible, we map the source term to a non-standard concept. If there is also no non-standard concept matching the source term, then we create a custom 'PIONEER' concept.
 
